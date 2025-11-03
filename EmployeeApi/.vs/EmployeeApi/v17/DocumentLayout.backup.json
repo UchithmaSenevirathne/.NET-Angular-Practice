@@ -1,0 +1,217 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Self Study\\interview\\EmployeeApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|c:\\self study\\interview\\employeeapi\\presentation\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|solutionrelative:presentation\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|c:\\self study\\interview\\employeeapi\\application\\dtos\\deleteemployeeresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|solutionrelative:application\\dtos\\deleteemployeeresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|c:\\self study\\interview\\employeeapi\\application\\dtos\\employeeresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|solutionrelative:application\\dtos\\employeeresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|c:\\self study\\interview\\employeeapi\\application\\dtos\\employeelistresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|solutionrelative:application\\dtos\\employeelistresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|c:\\self study\\interview\\employeeapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|c:\\self study\\interview\\employeeapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|c:\\self study\\interview\\employeeapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|c:\\self study\\interview\\employeeapi\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|c:\\self study\\interview\\employeeapi\\employeeapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|solutionrelative:employeeapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|c:\\self study\\interview\\employeeapi\\infrastructure\\persistence\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|solutionrelative:infrastructure\\persistence\\employeerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|c:\\self study\\interview\\employeeapi\\application\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|solutionrelative:application\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|c:\\self study\\interview\\employeeapi\\domain\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AC833B02-7B83-2217-828E-6302F6608E18}|EmployeeApi.csproj|solutionrelative:domain\\entities\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DeleteEmployeeResponse.cs",
+              "DocumentMoniker": "C:\\Self Study\\interview\\EmployeeApi\\Application\\DTOs\\DeleteEmployeeResponse.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\DeleteEmployeeResponse.cs",
+              "ToolTip": "C:\\Self Study\\interview\\EmployeeApi\\Application\\DTOs\\DeleteEmployeeResponse.cs",
+              "RelativeToolTip": "Application\\DTOs\\DeleteEmployeeResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T04:24:51.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeeResponse.cs",
+              "DocumentMoniker": "C:\\Self Study\\interview\\EmployeeApi\\Application\\DTOs\\EmployeeResponse.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\EmployeeResponse.cs",
+              "ToolTip": "C:\\Self Study\\interview\\EmployeeApi\\Application\\DTOs\\EmployeeResponse.cs",
+              "RelativeToolTip": "Application\\DTOs\\EmployeeResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T04:24:27.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EmployeeListResponse.cs",
+              "DocumentMoniker": "C:\\Self Study\\interview\\EmployeeApi\\Application\\DTOs\\EmployeeListResponse.cs",
+              "RelativeDocumentMoniker": "Application\\DTOs\\EmployeeListResponse.cs",
+              "ToolTip": "C:\\Self Study\\interview\\EmployeeApi\\Application\\DTOs\\EmployeeListResponse.cs",
+              "RelativeToolTip": "Application\\DTOs\\EmployeeListResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T04:23:32.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeesController.cs",
+              "DocumentMoniker": "C:\\Self Study\\interview\\EmployeeApi\\Presentation\\Controllers\\EmployeesController.cs",
+              "RelativeDocumentMoniker": "Presentation\\Controllers\\EmployeesController.cs",
+              "ToolTip": "C:\\Self Study\\interview\\EmployeeApi\\Presentation\\Controllers\\EmployeesController.cs",
+              "RelativeToolTip": "Presentation\\Controllers\\EmployeesController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-03T04:13:46.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Self Study\\interview\\EmployeeApi\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Self Study\\interview\\EmployeeApi\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-31T10:33:42.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Self Study\\interview\\EmployeeApi\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Self Study\\interview\\EmployeeApi\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-31T10:33:26.959Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Self Study\\interview\\EmployeeApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Self Study\\interview\\EmployeeApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T10:33:11.097Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EmployeeApi.http",
+              "DocumentMoniker": "C:\\Self Study\\interview\\EmployeeApi\\EmployeeApi.http",
+              "RelativeDocumentMoniker": "EmployeeApi.http",
+              "ToolTip": "C:\\Self Study\\interview\\EmployeeApi\\EmployeeApi.http",
+              "RelativeToolTip": "EmployeeApi.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-10-31T10:33:07.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Self Study\\interview\\EmployeeApi\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Self Study\\interview\\EmployeeApi\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-31T10:28:51.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "EmployeeService.cs",
+              "DocumentMoniker": "C:\\Self Study\\interview\\EmployeeApi\\Application\\Services\\EmployeeService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\EmployeeService.cs",
+              "ToolTip": "C:\\Self Study\\interview\\EmployeeApi\\Application\\Services\\EmployeeService.cs",
+              "RelativeToolTip": "Application\\Services\\EmployeeService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T10:27:01.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EmployeeRepository.cs",
+              "DocumentMoniker": "C:\\Self Study\\interview\\EmployeeApi\\Infrastructure\\Persistence\\EmployeeRepository.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Persistence\\EmployeeRepository.cs",
+              "ToolTip": "C:\\Self Study\\interview\\EmployeeApi\\Infrastructure\\Persistence\\EmployeeRepository.cs",
+              "RelativeToolTip": "Infrastructure\\Persistence\\EmployeeRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAcwC8AAACSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T10:25:31.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Self Study\\interview\\EmployeeApi\\Domain\\Entities\\Employee.cs",
+              "RelativeDocumentMoniker": "Domain\\Entities\\Employee.cs",
+              "ToolTip": "C:\\Self Study\\interview\\EmployeeApi\\Domain\\Entities\\Employee.cs",
+              "RelativeToolTip": "Domain\\Entities\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-31T10:25:14.63Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

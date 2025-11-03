@@ -19,26 +19,36 @@ public class EmployeesController : ControllerBase
 
     //GET: api/employees
     [HttpGet]
-    public async Task<ActionResult<ApiResponse<(List<EmployeeDto> employees, int count, DateTime timestamp)>>> GetEmployees()
+    public async Task<ActionResult<ApiResponse<EmployeeListResponse>>> GetEmployees()
     {
         try
         {
             var employees = await _service.GetAllEmployeesAsync();
-            var response = new ApiResponse<(List<EmployeeDto>, int, DateTime)>
+            var response = new ApiResponse<EmployeeListResponse>
             {
                 Code = (int)HttpStatusCode.OK,
                 Message = "Employees retrieved successfully",
-                Data = (employees, employees.Count, DateTime.UtcNow)
+                Data = new EmployeeListResponse
+                {
+                    Employees = employees,
+                    Count = employees.Count,
+                    Timestamp = DateTime.UtcNow
+                }
             };
             return Ok(response);
         }
         catch (Exception ex)
         {
-            var errorResponse = new ApiResponse<(List<EmployeeDto>, int, DateTime)>
+            var errorResponse = new ApiResponse<EmployeeListResponse>
             {
                 Code = (int)HttpStatusCode.InternalServerError,
                 Message = $"Error retrieving employees: {ex.Message}",
-                Data = (new List<EmployeeDto>(), 0, DateTime.UtcNow)
+                Data = new EmployeeListResponse
+                {
+                    Employees = new List<EmployeeDto>(),
+                    Count = 0,
+                    Timestamp = DateTime.UtcNow
+                }
             };
             return StatusCode((int)HttpStatusCode.InternalServerError, errorResponse);
         }
