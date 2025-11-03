@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Notification Service Styles */
+.notif-success {
+  background-color: #4caf50 !important; /* Green */
+  color: white !important;
+}
+
+.notif-info {
+  background-color: #2196f3 !important; /* Blue */
+  color: white !important;
+}
+
+.notif-warning {
+  background-color: #ff9800 !important; /* Orange */
+  color: white !important;
+}
+
+.notif-error {
+  background-color: #f44336 !important; /* Red */
+  color: white !important;
+}

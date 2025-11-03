@@ -1,0 +1,54 @@
+<div class="container my-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>Employee List</h2>
+    <button class="btn btn-success" (click)="openAddModal()">
+      <i class="bi bi-plus-circle"></i> New Employee
+    </button>
+  </div>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Position</th>
+          <th>Salary</th>
+          <th>Hire Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees">
+          <td>{{ emp.id }}</td>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.email }}</td>
+          <td>{{ emp.position }}</td>
+          <td>{{ emp.salary | currency }}</td>
+          <td>{{ emp.hireDate | date }}</td>
+          <td>
+            <button class="btn btn-sm btn-info me-1" (click)="openEditModal(emp)">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="onDeleteEmployee(emp.id)">Delete</button>
+          </td>
+        </tr>
+        <tr *ngIf="employees.length === 0">
+          <td colspan="7" class="text-center">No employees found.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade show" *ngIf="showModal" style="display: block; background: rgba(0,0,0,0.5);" (click)="onCancel()">
+  <div class="modal-dialog modal-dialog-centered" (click)="$event.stopPropagation()">
+    <div class="modal-content">
+      <app-employee-form
+        [employee]="selectedEmployee"
+        (save)="onSaveEmployee($event)"
+        (cancel)="onCancel()">
+      </app-employee-form>
+    </div>
+  </div>
+</div>
