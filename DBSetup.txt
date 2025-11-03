@@ -1,0 +1,234 @@
+------------------------------------ Create Database ------------------------------------
+
+CREATE DATABASE EmployeeDB;
+GO
+
+------------------------------------ Create Employee Table ------------------------------------
+
+USE [EmployeeDB]
+GO
+
+/**************************************************************
+ Author       : Uchithma Senevirathne
+ Created Date : 2025-10-31
+ Description  : Creates the Employees table with an auto-increment
+                primary key and standard employee details.
+**************************************************************/
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Employees] (
+    [Id] INT IDENTITY(1,1) PRIMARY KEY,        -- Auto-incrementing ID
+    [Name] NVARCHAR(100) NOT NULL,             -- Employee name
+    [Email] NVARCHAR(100) NOT NULL UNIQUE,     -- Unique email address
+    [Position] NVARCHAR(100) NULL,             -- Job title or role
+    [Salary] DECIMAL(18,2) NULL,               -- Salary amount
+    [HireDate] DATE NULL                       -- Date of hire
+);
+GO
+
+------------------------------------ Insert and Update ------------------------------------
+
+USE [EmployeeDB]
+GO
+
+/**************************************************************
+ Author       : Uchithma Senevirathne
+ Created Date : 2025-10-31
+ Description  : Inserts a new employee if Id = 0, otherwise updates
+                existing employee details. Includes transaction
+                control and error handling.
+**************************************************************/
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[UpsertEmployee]
+    @Id INT,
+    @Name NVARCHAR(100),
+    @Email NVARCHAR(100),
+    @Position NVARCHAR(100),
+    @Salary DECIMAL(18,2),
+    @HireDate DATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        IF @Id = 0
+        BEGIN
+            INSERT INTO Employees (Name, Email, Position, Salary, HireDate)
+            VALUES (@Name, @Email, @Position, @Salary, @HireDate);
+
+            -- Return inserted Id and message
+            DECLARE @NewId INT = SCOPE_IDENTITY();
+            COMMIT TRANSACTION;
+
+            SELECT 
+                1 AS Code,
+                'Employee inserted successfully.' AS Message,
+                @NewId AS Data;
+        END
+        ELSE
+        BEGIN
+            UPDATE Employees
+            SET 
+                Name = @Name,
+                Email = @Email,
+                Position = @Position,
+                Salary = @Salary,
+                HireDate = @HireDate
+            WHERE Id = @Id;
+
+            IF @@ROWCOUNT > 0
+            BEGIN
+                COMMIT TRANSACTION;
+                SELECT 
+                    1 AS Code,
+                    'Employee updated successfully.' AS Message,
+                    @Id AS Data;
+            END
+            ELSE
+            BEGIN
+                ROLLBACK TRANSACTION;
+                SELECT 
+                    0 AS Code,
+                    'No employee found with the provided Id.' AS Message,
+                    NULL AS Data;
+            END
+        END
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        SELECT 
+            ERROR_NUMBER() AS Code,
+            'Error: ' + ERROR_MESSAGE() AS Message,
+            NULL AS Data;
+    END CATCH
+END
+GO
+
+------------------------------------ Get All ------------------------------------
+
+USE [EmployeeDB]
+GO
+
+/**************************************************************
+ Author       : Uchithma Senevirathne
+ Created Date : 2025-10-31
+ Description  : Retrieves all employees from the Employees table.
+                Includes error handling and returns data in a
+                standardized response format.
+**************************************************************/
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[GetAllEmployees]
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        -- Fetch all employee records
+        SELECT 
+            1 AS Code,
+            'Employees retrieved successfully.' AS Message,
+            (
+                SELECT 
+                    Id,
+                    Name,
+                    Email,
+                    Position,
+                    Salary,
+                    HireDate
+                FROM Employees
+                FOR JSON PATH
+            ) AS Data;
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        SELECT 
+            ERROR_NUMBER() AS Code,
+            'Error: ' + ERROR_MESSAGE() AS Message,
+            NULL AS Data;
+    END CATCH
+END
+GO
+
+------------------------------------ Delete Employee ------------------------------------
+
+USE [EmployeeDB]
+GO
+
+/**************************************************************
+ Author       : Uchithma Senevirathne
+ Created Date : 2025-10-31
+ Description  : Deletes an employee by Id from the Employees table.
+                Includes transaction and error handling with a
+                standardized response format.
+**************************************************************/
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+ALTER PROCEDURE [dbo].[DeleteEmployee]
+    @Id INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        BEGIN TRANSACTION;
+
+        DELETE FROM Employees WHERE Id = @Id;
+
+        IF @@ROWCOUNT > 0
+        BEGIN
+            COMMIT TRANSACTION;
+            SELECT 
+                1 AS Code,
+                'Employee deleted successfully.' AS Message,
+                @Id AS Data;
+        END
+        ELSE
+        BEGIN
+            ROLLBACK TRANSACTION;
+            SELECT 
+                0 AS Code,
+                'No employee found with the provided Id.' AS Message,
+                NULL AS Data;
+        END
+    END TRY
+    BEGIN CATCH
+        IF @@TRANCOUNT > 0
+            ROLLBACK TRANSACTION;
+
+        SELECT 
+            ERROR_NUMBER() AS Code,
+            'Error: ' + ERROR_MESSAGE() AS Message,
+            NULL AS Data;
+    END CATCH
+END
+GO
+
+
