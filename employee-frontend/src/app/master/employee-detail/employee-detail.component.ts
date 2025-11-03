@@ -34,10 +34,49 @@ export class EmployeeDetailComponent implements OnInit {
   async loadEmployees(): Promise<void> {
     try {
       const response = await this.employeeService.getAllEmployeesAsync();
+      
       if (response.code >= 200 && response.code < 300) {
-        const [employees, count, timestamp] = response.data;
+        // Handle both array tuple (old format) and object (new format) response
+        let employees: Employee[] = [];
+        let count: number = 0;
+        let timestamp: string = '';
+        
+        if (Array.isArray(response.data)) {
+          // Legacy: If data is an array (tuple serialized as array)
+          [employees, count, timestamp] = response.data;
+        } else if (response.data && typeof response.data === 'object') {
+          const data = response.data as any;
+          // New format: EmployeeListResponse with Employees, Count, Timestamp
+          if (data.Employees || data.employees) {
+            employees = data.Employees || data.employees || [];
+            count = data.Count || data.count || employees.length;
+            timestamp = data.Timestamp || data.timestamp || '';
+          } else {
+            // Fallback: Check for tuple properties (Item1, Item2, Item3)
+            employees = data.Item1 || data.item1 || [];
+            count = data.Item2 || data.item2 || 0;
+            timestamp = data.Item3 || data.item3 || '';
+          }
+          
+          // Convert timestamp to string if needed
+          const timestampValue: any = timestamp;
+          if (timestampValue instanceof Date) {
+            timestamp = timestampValue.toISOString();
+          } else if (typeof timestampValue === 'number') {
+            timestamp = new Date(timestampValue).toISOString();
+          } else if (!timestampValue || typeof timestampValue !== 'string') {
+            timestamp = timestampValue ? String(timestampValue) : '';
+          }
+        }
+        
+        // Ensure employees is an array
+        if (!Array.isArray(employees)) {
+          employees = [];
+        }
+        
         this.employees = employees;
         console.log(`Success: ${response.message}, Count: ${count}, Timestamp: ${timestamp}`);
+        console.log(`Loaded ${employees.length} employees:`, employees);
       } else {
         console.error(`Error: ${response.message}`);
         this.notificationService.error(response.message || 'Failed to load employees');
@@ -69,7 +108,19 @@ export class EmployeeDetailComponent implements OnInit {
     try {
       const response = await this.employeeService.saveEmployeeAsync(employee);
       if (response.code >= 200 && response.code < 300) {
-        const [savedEmployee, status, timestamp] = response.data;
+        // Handle both array tuple and object response formats
+        let savedEmployee: Employee;
+        let status: string;
+        let timestamp: string;
+        
+        if (Array.isArray(response.data)) {
+          [savedEmployee, status, timestamp] = response.data;
+        } else {
+          savedEmployee = (response.data as any).employee || (response.data as any).data || employee;
+          status = (response.data as any).status || '';
+          timestamp = (response.data as any).timestamp || '';
+        }
+        
         console.log(`Success: ${response.message}, Status: ${status}, Timestamp: ${timestamp}`);
         
         // Show success notification based on operation type
@@ -97,7 +148,19 @@ export class EmployeeDetailComponent implements OnInit {
       try {
         const response = await this.employeeService.deleteEmployeeAsync(id);
         if (response.code >= 200 && response.code < 300) {
-          const [deletedId, status, timestamp] = response.data;
+          // Handle both array tuple and object response formats
+          let deletedId: number;
+          let status: string;
+          let timestamp: string;
+          
+          if (Array.isArray(response.data)) {
+            [deletedId, status, timestamp] = response.data;
+          } else {
+            deletedId = (response.data as any).id || (response.data as any).deletedId || id;
+            status = (response.data as any).status || '';
+            timestamp = (response.data as any).timestamp || '';
+          }
+          
           console.log(`Success: ${response.message}, Status: ${status}, Timestamp: ${timestamp}`);
           this.notificationService.deleted('Employee deleted successfully!');
           await this.loadEmployees();
